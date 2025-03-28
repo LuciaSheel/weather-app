@@ -1,6 +1,7 @@
 // Main component containing layout and state
 import { useState } from 'react';
 import { fetchWeather } from "./utils/api";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   const [city, setCity] = useState(""); // User input city

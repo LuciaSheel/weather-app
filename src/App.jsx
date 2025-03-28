@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      <ThemeToggle />
       <h1>Weather App</h1>
       <input
         type="text"

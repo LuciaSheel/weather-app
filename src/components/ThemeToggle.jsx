@@ -1,6 +1,6 @@
 // Add a light/dark theme toggle button
 import { useTheme } from "../context/ThemeContext";
-import { FaSun, FaMoon } from "react-icons/fa"; // Icons for light/dark mode
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();

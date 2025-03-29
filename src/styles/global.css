@@ -54,16 +54,6 @@ button {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
 }
 
-/* .search-bar button {
-  background-color: #ffcc00;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 5px;
-} */
-
 /* Get Weather button */
 .btn:hover {
   background-color: #e6b800;
@@ -146,7 +136,7 @@ body[data-theme="dark"] .theme-toggle svg {
   margin: auto; /* Center each forecast item */
   border-radius: 12px; /* Rounded corners */
   background-color: #f0f0f0; /* Light grey background for light mode */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Optional: subtle shadow for better visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   transition: background-color 0.3s ease;
 }
 

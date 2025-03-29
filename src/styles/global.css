@@ -6,6 +6,78 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+input,
+button {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+input[type="text"] {
+  width: 200px;
+  margin-right: 10px; /* Space between search input and button */
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.search-bar input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  background-color: #ffcc00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.search-bar button:hover {
+  background-color: #e6b800;
+}
+
+/* Unit toggle */
+.unit-toggle {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.unit-toggle label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.unit-toggle button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.unit-toggle button:hover {
+  background-color: #0056b3;
+}
+
 /* Dark mode styles */
 body[data-theme="dark"] {
   background-color: #1e1e1e;
@@ -64,5 +136,12 @@ body[data-theme="dark"] .theme-toggle svg {
 
 .forecast-details p {
   margin: 5px 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-weight: bold;
 }
 

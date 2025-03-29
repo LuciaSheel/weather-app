@@ -4,11 +4,10 @@ body {
   background-color: #f0f0f0;
   color: #333;
   transition: background 0.3s, color 0.3s;
-  height: 100%; /* Ensure body takes up full height */
-
-  margin: 0; /* Remove default margin */
-  display: flex; /* Use flexbox on the body */
-  flex-direction: column; /* Stack content vertically */
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Dark mode */
@@ -25,7 +24,7 @@ body[data-theme="dark"] {
   cursor: pointer;
   position: relative;
   top: 20px;
-  right: 80px;
+  left: 100px;
 }
 
 .theme-toggle svg {
@@ -39,7 +38,7 @@ body[data-theme="dark"] .theme-toggle svg {
 /* Main app container */
 .app {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column;
   justify-content: center; /* Vertically center */
   align-items: center; /* Horizontally center */
   height: 100%;
@@ -66,9 +65,9 @@ body[data-theme="dark"] .theme-toggle svg {
 }
 
 .search-bar input:focus {
-  border-color: #007bff; /* Border color when focused */
-  outline: none; /* Remove the default outline */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Unit toggle */
@@ -124,14 +123,14 @@ body[data-theme="dark"] .theme-toggle svg {
 
 .forecast-day {
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: center; /* Vertically center content */
-  align-items: center; /* Horizontally center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 10px 0px;
   flex: 1 1 150px;
   max-width: 150px;
-  border-radius: 12px; /* Rounded corners */
-  background-color: #f0f0f0; /* Light grey background for light mode */
+  border-radius: 12px;
+  background-color: #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   transition: background-color 0.3s ease;
 }
@@ -142,8 +141,8 @@ body[data-theme="dark"] .theme-toggle svg {
 
 /* Adjust forecast-day for dark mode */
 body[data-theme="dark"] .forecast-day {
-  background-color: #333; /* Darken the background in dark mode */
-  color: #fff; /* Ensure text remains white */
+  background-color: #333;
+  color: #fff;
 }
 
 .error-message {
@@ -152,4 +151,3 @@ body[data-theme="dark"] .forecast-day {
   margin-top: 20px;
   font-weight: bold;
 }
-

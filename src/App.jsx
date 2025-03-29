@@ -2,13 +2,22 @@
 import { useState } from 'react';
 import { fetchWeather } from "./utils/api";
 import ThemeToggle from "./components/ThemeToggle";
+import SearchBar from "./components/SearchBar";
+import WeatherDisplay from "./components/WeatherDisplay";
 import Forecast from "./components/Forecast";
+import ErrorMessage from "./components/ErrorMessage";
+import UnitToggle from "./components/UnitToggle";
 
 function App() {
   const [city, setCity] = useState(""); // User input city
   const [weather, setWeather] = useState(null); // Weather data
-  const [forecast, setForecast] = useState(null);
+  const [forecast, setForecast] = useState(null); // Forecast data
   const [error, setError] = useState(null); // Error state
+  const [unit, setUnit] = useState("C"); // "C" or "F"
+
+  const convertTemp = (temp) => {
+    return unit === "F" ? (temp * 9) / 5 + 32 : temp;
+  };
 
   const handleSearch = async () => {
     try {
@@ -25,26 +34,15 @@ function App() {
     <div className="app">
       <ThemeToggle />
       <h1>Weather App</h1>
-      <input
-        type="text"
-        placeholder="Enter city name"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <button onClick={handleSearch}>Get Weather</button>
 
-      {error && <p className="error">{error}</p>}
+       <SearchBar city={city} setCity={setCity} onSearch={handleSearch} />
+      <UnitToggle unit={unit} setUnit={setUnit} />
 
-      {weather && (
-        <div>
-          <h2>{weather.name}, {weather.sys.country}</h2>
-          <p>Temperature: {weather.main.temp}°C</p>
-          <p>Humidity: {weather.main.humidity}%</p>
-          <p>Wind Speed: {weather.wind.speed} m/s</p>
-        </div>
-      )}
+      {error && <ErrorMessage message={error} />}
 
-      {forecast && <Forecast forecast={forecast} />}
+      {weather && <WeatherDisplay weather={weather} convertTemp={convertTemp} />}
+
+      {forecast && <Forecast forecast={forecast} convertTemp={convertTemp} />}
     </div>
   );
 }

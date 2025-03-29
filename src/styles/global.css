@@ -4,6 +4,19 @@ body {
   background-color: #f0f0f0;
   color: #333;
   transition: background 0.3s, color 0.3s;
+  height: 100%; /* Ensure body takes up full height */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use flexbox on the body */
+  flex-direction: column; /* Stack content vertically */
+}
+
+.app {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Vertically center */
+  align-items: center; /* Horizontally center */
+  height: 100%;
+  margin-bottom: 20px;
 }
 
 input,
@@ -15,16 +28,10 @@ button {
   transition: all 0.3s ease;
 }
 
-input[type="text"] {
-  width: 200px;
-  margin-right: 10px; /* Space between search input and button */
-}
-
 /* Search bar */
 .search-bar {
   display: flex;
   align-items: center;
-  margin-top: 20px;
   gap: 10px;
 }
 
@@ -34,9 +41,20 @@ input[type="text"] {
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-bar button {
+.search-bar input:hover {
+  border-color: #e6b800;
+}
+
+.search-bar input:focus {
+  border-color: #007bff; /* Border color when focused */
+  outline: none; /* Remove the default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
+}
+
+/* .search-bar button {
   background-color: #ffcc00;
   color: white;
   border: none;
@@ -44,10 +62,12 @@ input[type="text"] {
   font-size: 1rem;
   padding: 10px 20px;
   border-radius: 5px;
-}
+} */
 
-.search-bar button:hover {
+/* Get Weather button */
+.btn:hover {
   background-color: #e6b800;
+  cursor: pointer;
 }
 
 /* Unit toggle */
@@ -112,30 +132,22 @@ body[data-theme="dark"] .theme-toggle svg {
 .forecast {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
+  justify-content: center; /* Horizontally center forecast items */
+  gap: 1rem; /* Space between forecast items */
 }
 
 .forecast-day {
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 150px;
-  text-align: center;
-}
-
-.forecast-day h3 {
-  font-size: 1.2rem;
-}
-
-.forecast-details {
   display: flex;
-  flex-direction: column;
-}
-
-.forecast-details p {
-  margin: 5px 0;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  flex: 1 1 200px;
+  max-width: 200px;
+  margin: auto; /* Center each forecast item */
+  border-radius: 12px; /* Rounded corners */
+  background-color: #f0f0f0; /* Light grey background for light mode */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Optional: subtle shadow for better visibility */
+  transition: background-color 0.3s ease;
 }
 
 .error-message {

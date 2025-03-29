@@ -12,6 +12,12 @@ body[data-theme="dark"] {
   color: #fff;
 }
 
+/* Adjust forecast-day for dark mode */
+body[data-theme="dark"] .forecast-day {
+  background-color: #333; /* Darken the background in dark mode */
+  color: #fff; /* Ensure text remains white */
+}
+
 /* Theme toggle button styles */
 .theme-toggle {
   background: none;

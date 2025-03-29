@@ -53,6 +53,47 @@ This Weather App allows users to search for the current weather and forecast, an
 - **CSS** for styling.
 - **State Management** using React hooks.
 
+## Project Structure
+
+## Project Structure
+
+## Project Structure
+
+weather-app/  
+│── node_modules/             # Dependencies (auto-generated)  
+│── src/                      # Main source code  
+│   │── components/           # Reusable UI components  
+│   │   │── Button.jsx  
+│   │   │── ErrorMessage.jsx  
+│   │   │── Forecast.jsx  
+│   │   │── SearchBar.jsx  
+│   │   │── ThemeToggle.jsx  
+│   │   │── UnitToggle.jsx  
+│   │   │── WeatherDisplay.jsx  
+│   │  
+│   │── context/              # Context API for state management  
+│   │   │── ThemeContext.jsx  
+│   │  
+│   │── styles/               # Global styles  
+│   │   │── global.css  
+│   │  
+│   │── utils/                # Helper functions  
+│   │   │── api.js  
+│   │  
+│   │── App.jsx               # Main application component  
+│   │── main.jsx              # Entry point  
+│  
+│── .env                      # Environment variables  
+│── .gitignore                # Git ignore file  
+│── eslint.config.js          # ESLint configuration  
+│── index.html                # Main HTML file  
+│── package-lock.json         # Package lock file  
+│── package.json              # Project metadata and dependencies  
+│── README.md                 # Project documentation  
+│── vite.config.js            # Vite configuration  
+ 
+
+
 Thanks for checking out my weather app! Hope you have sunshine wherever you are!☀️😊
 
 

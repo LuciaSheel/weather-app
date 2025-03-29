@@ -2,24 +2,27 @@
 import { useState } from 'react';
 import { fetchWeather } from "./utils/api";
 import ThemeToggle from "./components/ThemeToggle";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [city, setCity] = useState(""); // User input city
   const [weather, setWeather] = useState(null); // Weather data
+  const [forecast, setForecast] = useState(null);
   const [error, setError] = useState(null); // Error state
 
   const handleSearch = async () => {
     try {
       setError(null); // Reset error
-      const data = await fetchWeather(city); // Fetch weather data
-      setWeather(data); // Store result in state
+      const { currentWeatherData, forecastData } = await fetchWeather(city); // Fetch weather data
+      setWeather(currentWeatherData);
+      setForecast(forecastData); // Store result in state
     } catch (err) {
       setError(err.message); // Handle errors
     }
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div className="app">
       <ThemeToggle />
       <h1>Weather App</h1>
       <input
@@ -30,7 +33,7 @@ function App() {
       />
       <button onClick={handleSearch}>Get Weather</button>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       {weather && (
         <div>
@@ -40,6 +43,8 @@ function App() {
           <p>Wind Speed: {weather.wind.speed} m/s</p>
         </div>
       )}
+
+      {forecast && <Forecast forecast={forecast} />}
     </div>
   );
 }

@@ -1,4 +1,3 @@
-// Button.jsx
 const Button = ({ onClick, label, disabled, isLoading }) => {
   return (
     <button

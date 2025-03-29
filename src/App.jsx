@@ -22,14 +22,26 @@ function App() {
   };
 
   const handleSearch = async () => {
+    if (!city.trim()) {
+      setError("Please enter a city name.");
+      return;
+    }
+
     setIsLoading(true);
+    setError(null); // Reset error
+
     try {
-      setError(null); // Reset error
       const { currentWeatherData, forecastData } = await fetchWeather(city); // Fetch weather data
       setWeather(currentWeatherData);
       setForecast(forecastData); // Store result in state
     } catch (err) {
-      setError(err.message); // Handle errors
+       if (err.message) {
+        // If the error has a message (as defined in `api.js`)
+        setError(err.message);
+      } else {
+        // Fallback error
+        setError("An unexpected error occurred. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }

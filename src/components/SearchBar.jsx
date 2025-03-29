@@ -6,8 +6,12 @@ const SearchBar = ({ city, setCity, onSearch }) => {
         placeholder="Enter city name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            onSearch();
+          }
+        }}
       />
-      <button onClick={onSearch}>Get Weather</button>
     </div>
   );
 };

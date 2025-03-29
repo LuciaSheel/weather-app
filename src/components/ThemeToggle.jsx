@@ -1,4 +1,3 @@
-// Add a light/dark theme toggle button
 import { useTheme } from "../context/ThemeContext";
 import { FaSun, FaMoon } from "react-icons/fa";
 

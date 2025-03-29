@@ -22,7 +22,11 @@ function App() {
   };
 
   const handleSearch = async () => {
+
+    console.log("Search triggered");
+
     if (!city.trim()) {
+      console.log("No city entered, showing error...");
       setError("Please enter a city name.");
       return;
     }
@@ -58,7 +62,7 @@ function App() {
         onClick={handleSearch}
         label="Get Weather"
         isLoading={isLoading}
-        disabled={!city}
+        disabled={isLoading}
       />
 
       {error && <ErrorMessage message={error} />}

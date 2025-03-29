@@ -7,6 +7,7 @@ import WeatherDisplay from "./components/WeatherDisplay";
 import Forecast from "./components/Forecast";
 import ErrorMessage from "./components/ErrorMessage";
 import UnitToggle from "./components/UnitToggle";
+import Button from './components/Button';
 
 function App() {
   const [city, setCity] = useState(""); // User input city
@@ -14,12 +15,14 @@ function App() {
   const [forecast, setForecast] = useState(null); // Forecast data
   const [error, setError] = useState(null); // Error state
   const [unit, setUnit] = useState("C"); // "C" or "F"
+  const [isLoading, setIsLoading] = useState(false); // Loading state
 
   const convertTemp = (temp) => {
     return unit === "F" ? (temp * 9) / 5 + 32 : temp;
   };
 
   const handleSearch = async () => {
+    setIsLoading(true);
     try {
       setError(null); // Reset error
       const { currentWeatherData, forecastData } = await fetchWeather(city); // Fetch weather data
@@ -27,6 +30,8 @@ function App() {
       setForecast(forecastData); // Store result in state
     } catch (err) {
       setError(err.message); // Handle errors
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -35,8 +40,14 @@ function App() {
       <ThemeToggle />
       <h1>Weather App</h1>
 
-       <SearchBar city={city} setCity={setCity} onSearch={handleSearch} />
+      <SearchBar city={city} setCity={setCity} onSearch={handleSearch} />
       <UnitToggle unit={unit} setUnit={setUnit} />
+      <Button
+        onClick={handleSearch}
+        label="Get Weather"
+        isLoading={isLoading}
+        disabled={!city}
+      />
 
       {error && <ErrorMessage message={error} />}
 

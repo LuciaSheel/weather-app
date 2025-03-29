@@ -55,10 +55,6 @@ This Weather App allows users to search for the current weather and forecast, an
 
 ## Project Structure
 
-## Project Structure
-
-## Project Structure
-
 weather-app/  
 │── node_modules/             # Dependencies (auto-generated)  
 │── src/                      # Main source code  

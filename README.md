@@ -1,12 +1,58 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This Weather App allows users to search for the current weather and forecast, and toggle between Celsius and Fahrenheit. The app integrates the OpenWeatherMap API to fetch weather data and provides a responsive UI with light/dark mode.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Search bar** to search for any city's weather.
+- **Current weather display** with temperature, humidity, and wind speed.
+- **Weather forecast** showing high/low temperatures for the next few days.
+- **Celsius/Fahrenheit toggle** for temperature units.
+- **Light/Dark mode** for a personalized experience.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/LuciaSheel/weather-app.git
+    ```
+
+2. Install dependencies:
+    ```bash
+    cd weather-app
+    npm install
+    ```
+
+3. Create a `.env` file in the root of the project and add your OpenWeatherMap API key:
+    ```bash
+    VITE_WEATHER_API_KEY=your_api_key_here
+    ```
+
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+5. Open your browser and navigate to `http://localhost:5173` to view the app.
+
+## Usage
+
+1. **Search for a city** using the search bar.
+2. **Toggle between Celsius and Fahrenheit** to change the temperature units.
+3. **Switch between light and dark modes** using the theme toggle button.
+4. **View the high/low temperature forecast** for the current day, and the next five days.
+
+## Technologies Used
+
+- **React** for the frontend framework.
+- **Vite** as the build tool.
+- **Axios** for making HTTP requests
+- **OpenWeatherMap API** for fetching weather data.
+- **CSS** for styling.
+- **State Management** using React hooks.
+
+Thanks for checking out my weather app! Hope you have sunshine wherever you are!☀️😊
+
+
